@@ -1,13 +1,15 @@
-{
+e{
   "novedades": [
     { "img": "img/noticia1.jpg", "titulo": "Nuevo torneo Call of Duty", "descripcion": "Se celebrará en 2025 con premios millonarios." },
     { "img": "img/noticia2.jpg", "titulo": "PS5 Slim anunciada", "descripcion": "Sony lanza una versión más compacta de su consola." }
   ],
   "estrenos": [
     { "img": "img/estreno1.jpg", "titulo": "Silent Hill Rebirth", "descripcion": "El esperado remake llega con gráficos de nueva generación." }
+    { "img": "img/estreno2.jpg", "titulo": "FIFA 26", "descripcion": "La nueva entrega incluye jugabilidad mejorada y gráficos hiperrealistas." },
   ],
   "recomendaciones": [
     { "img": "img/recom1.jpg", "titulo": "Persona 5 Royal", "descripcion": "Un JRPG con historia profunda y combates estratégicos." }
+    { "img": "img/reco2.jpg", "titulo": "Red Dead Redemption 2", "descripcion": "Explora el salvaje oeste con un nivel de detalle impresionante." },
   ],
   "mejores juegos": [
     { "img": "img/top1.jpg", "titulo": "Elden Ring", "descripcion": "El juego más aclamado en PS5." },
