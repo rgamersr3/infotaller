@@ -9,7 +9,7 @@
   "recomendaciones": [
     { "img": "img/recom1.jpg", "titulo": "Persona 5 Royal", "descripcion": "Un JRPG con historia profunda y combates estratégicos." }
   ],
-  "topten": [
+  "best games of the year": [
     { "img": "img/top1.jpg", "titulo": "Elden Ring", "descripcion": "El juego más aclamado en PS5." },
     { "img": "img/top2.jpg", "titulo": "Halo Infinite", "descripcion": "El favorito de los fans de Xbox." }
   ]
