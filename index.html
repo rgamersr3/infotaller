@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TALLER R-GAMER'S</title>
+  <title>R-GAMER'S - Inicio</title>
   <style>
     body { margin: 0; font-family: Arial, sans-serif; background-color: #0d0d0d; color: #f2f2f2; scroll-behavior: smooth; }
     .top-header { text-align: center; padding: 50px 20px; background: #111; border-bottom: 2px solid #0f0; }
@@ -39,7 +39,7 @@
   <a href="#novedades">Novedades</a>
   <a href="#estrenos">Estrenos</a>
   <a href="#recomendaciones">Recomendaciones</a>
-  <a href="#mejores juegos">Mejores Juegos</a>
+  <a href="#topten">Top Ten</a>
   <a href="servicios.html">Servicios</a>
   <a href="contacto.html">Contacto</a>
   <a href="catalogo.html">Catálogo</a>
@@ -60,9 +60,9 @@
   <div class="two-columns" id="recomendaciones-container"></div>
 </section>
 
-<section id="mejores juegos" class="fade-in">
-  <h2>🏆 Mejores Juegos</h2>
-  <div class="two-columns" id="mejores juegos-container"></div>
+<section id="topten" class="fade-in">
+  <h2>🏆 Top Ten</h2>
+  <div class="two-columns" id="topten-container"></div>
 </section>
 
 <footer>
@@ -94,7 +94,7 @@
       renderCards('novedades-container', data.novedades);
       renderCards('estrenos-container', data.estrenos);
       renderCards('recomendaciones-container', data.recomendaciones);
-      renderCards('mejores juegos-container', data.mejoresjuegos);
+      renderCards('topten-container', data.topten);
     });
 
   // Animaciones de scroll
@@ -114,4 +114,4 @@
 </script>
 
 </body>
-</html>
+  </html>
