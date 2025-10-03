@@ -5,7 +5,6 @@
   ],
   "estrenos": [
     { "img": "img/estreno1.jpg", "titulo": "Silent Hill Rebirth", "descripcion": "El esperado remake llega con gráficos de nueva generación." }
-    { "img": "img/estreno2.jpg", "titulo": "Silent  Rebirth", "descripcion": "El esperado remake llega con gráficos de  generación." }
   ],
   "recomendaciones": [
     { "img": "img/recom1.jpg", "titulo": "Persona 5 Royal", "descripcion": "Un JRPG con historia profunda y combates estratégicos." }
