@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Virtual Store Catalog | Taller R-GAMERS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee2b2b",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#181111",
+                        "card-dark": "#221010",
+                        "border-dark": "#392828",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .neon-text {
+            text-shadow: 0 0 5px rgba(238, 43, 43, 0.5), 0 0 10px rgba(238, 43, 43, 0.3);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #181111;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #392828;
+            border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #ee2b2b;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-white">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 w-full border-b border-solid border-border-dark bg-background-dark/95 backdrop-blur-sm px-6 py-3">
+<div class="max-w-[1440px] mx-auto flex items-center justify-between gap-8">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3 text-white">
+<div class="size-8 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 4H42V17.3333V30.6667H24V44H6V30.6667V17.3333H24V4Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-xl font-bold leading-tight tracking-tight uppercase">Taller R-GAMERS</h2>
+</div>
+<!-- Desktop Search Bar -->
+<div class="hidden md:flex flex-col min-w-80 h-10">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-[#b99d9d] flex border-none bg-border-dark items-center justify-center pl-4 rounded-l-lg">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 border-none bg-border-dark text-white focus:ring-0 h-full placeholder:text-[#b99d9d] px-4 rounded-r-lg text-sm font-normal" placeholder="Buscar mandos, consolas o servicios..." value=""/>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden lg:flex items-center gap-8">
+<a class="text-white hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Tienda</a>
+<a class="text-white hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Reparaciones</a>
+<a class="text-white hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Nosotros</a>
+</nav>
+<div class="flex items-center gap-3">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-border-dark text-white hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+<button class="relative flex items-center justify-center rounded-lg h-10 w-10 bg-border-dark text-white hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-xl">shopping_cart</span>
+<span class="absolute -top-1 -right-1 bg-primary text-[10px] font-bold px-1.5 py-0.5 rounded-full border-2 border-background-dark">2</span>
+</button>
+<div class="h-10 w-[1px] bg-border-dark mx-1"></div>
+<button class="flex items-center gap-2 px-4 h-10 bg-primary rounded-lg text-white text-sm font-bold hover:brightness-110 transition-all">
+<span class="material-symbols-outlined text-xl">person</span>
+<span class="hidden sm:inline">Mi Cuenta</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-[1440px] mx-auto flex gap-8 px-6 py-6">
+<!-- Sidebar Navigation -->
+<aside class="w-64 shrink-0 hidden md:block">
+<div class="flex flex-col gap-8 sticky top-24">
+<!-- Breadcrumbs -->
+<div class="flex flex-wrap gap-2 text-sm">
+<a class="text-[#b99d9d] hover:text-white transition-colors" href="#">Tienda</a>
+<span class="text-border-dark">/</span>
+<span class="text-white font-medium">Catálogo</span>
+</div>
+<!-- Categories -->
+<div class="flex flex-col gap-4">
+<div>
+<h3 class="text-white text-lg font-bold">Categorías</h3>
+<p class="text-[#b99d9d] text-xs">Filtra por tipo de equipo</p>
+</div>
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 border border-primary/20 text-white" href="#">
+<span class="material-symbols-outlined text-primary">sports_esports</span>
+<span class="text-sm font-medium">Controles</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-border-dark text-[#b99d9d] hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">videogame_asset</span>
+<span class="text-sm font-medium">Consolas</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-border-dark text-[#b99d9d] hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">key</span>
+<span class="text-sm font-medium">Códigos Digitales</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-border-dark text-[#b99d9d] hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">cable</span>
+<span class="text-sm font-medium">Accesorios</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-border-dark text-[#b99d9d] hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">build</span>
+<span class="text-sm font-medium">Servicios Técnicos</span>
+</a>
+</div>
+</div>
+<!-- Price Slider -->
+<div class="flex flex-col gap-4 border-t border-border-dark pt-6">
+<h3 class="text-white text-base font-bold">Rango de Precio</h3>
+<div class="flex flex-col gap-6">
+<div class="relative h-1.5 w-full bg-border-dark rounded-full overflow-hidden">
+<div class="absolute left-0 right-1/4 h-full bg-primary"></div>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-xs text-[#b99d9d] px-2 py-1 bg-border-dark rounded">$0</span>
+<span class="text-xs text-white px-2 py-1 bg-primary rounded font-bold">$450</span>
+</div>
+</div>
+</div>
+<!-- Repair Banner Mini -->
+<div class="mt-4 p-4 rounded-xl bg-gradient-to-br from-[#221010] to-[#392828] border border-border-dark relative overflow-hidden group">
+<div class="relative z-10">
+<h4 class="text-primary font-bold text-sm uppercase mb-1">¿Drift en tu control?</h4>
+<p class="text-white text-xs leading-relaxed mb-3">Servicio técnico express certificado para PS5 y Xbox.</p>
+<button class="text-[10px] font-bold uppercase tracking-wider flex items-center gap-1 text-white hover:text-primary transition-colors">
+                            Cotizar reparación <span class="material-symbols-outlined text-xs">arrow_forward</span>
+</button>
+</div>
+<span class="material-symbols-outlined absolute -bottom-2 -right-2 text-6xl opacity-10 group-hover:scale-110 transition-transform">construction</span>
+</div>
+</div>
+</aside>
+<!-- Product Content Area -->
+<div class="flex-1">
+<!-- Toolbar -->
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
+<div>
+<h1 class="text-2xl font-bold text-white tracking-tight">Equipos y Hardware</h1>
+<p class="text-[#b99d9d] text-sm">Mostrando 1-12 de 48 productos</p>
+</div>
+<div class="flex items-center gap-3 w-full sm:w-auto">
+<span class="text-[#b99d9d] text-xs font-bold uppercase whitespace-nowrap">Ordenar por:</span>
+<select class="bg-border-dark border-none rounded-lg text-white text-sm focus:ring-primary w-full sm:w-48">
+<option>Más populares</option>
+<option>Precio: Menor a mayor</option>
+<option>Precio: Mayor a menor</option>
+<option>Nuevos lanzamientos</option>
+</select>
+</div>
+</div>
+<!-- Product Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+<!-- Product Card 1 -->
+<div class="group bg-card-dark border border-border-dark rounded-xl overflow-hidden hover:border-primary/50 transition-all duration-300 flex flex-col">
+<div class="relative aspect-square overflow-hidden bg-background-dark">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Black PS5 DualSense controller on dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChACi1s9N8bDK9cyiiusOrRtdtcfY8KQP-sMsDbIeKb6YZlpo3wH_2gGKBR9CizypRaWgZH9E-Seu-KlZqa2uJF-7MIoCu6fq5VVdFr1hO170GY_brpeeVeIm6OgYEk2p85opXKz3yjADGdO9OT51DlmgiPuuXzd79acBHTutol4u2-OkGgk4aW7b5szqi29_NCxyKbymcacYWzWG18pDrPvFKA6Je6eXuU7IMdKlK3JREprzH4KHDqYPwITYeHWFptdxtLbH3ioxy"/>
+<div class="absolute top-3 left-3 flex flex-col gap-2">
+<span class="bg-primary text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase">Nuevo</span>
+</div>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<p class="text-[#b99d9d] text-xs uppercase font-bold tracking-widest mb-1">PlayStation</p>
+<h3 class="text-white font-bold text-base mb-2 line-clamp-2">DualSense™ Wireless Controller - Midnight Black</h3>
+<div class="mt-auto pt-4 flex flex-col gap-4">
+<div class="flex items-end justify-between">
+<span class="text-2xl font-bold text-primary neon-text">$74.99</span>
+<span class="text-[#b99d9d] text-xs line-through">$89.99</span>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-2.5 rounded-lg flex items-center justify-center gap-2 transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined text-xl">shopping_cart</span>
+                                Agregar al carrito
+                            </button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group bg-card-dark border border-border-dark rounded-xl overflow-hidden hover:border-primary/50 transition-all duration-300 flex flex-col">
+<div class="relative aspect-square overflow-hidden bg-background-dark">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Xbox Series X controller white version" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAn2trXSt96JY-KVBb7SyAj30g34oWkZJjrDUCFAYiXg8XI17Oo8DGBlOh0pxhY4ZZnLfX-sI4kIx7a9UkYSCK9k7yuIMnIWYbzO03MXfb5mF0ZEwWD3vaTUOx5LG7PGM8U520gD4CI1dHuC930iWPxPc8MkxBBeAvnL-WMUczQJOlDZ02LwbY5hBpiISilLhgYqUWROrRPt1S4Z_SkcnP2Z5KWtM7upAuIaoCOCJcWi8JvJw9DRQkNQCMK0v9UP-gxldLfeXv7nBIG"/>
+<div class="absolute top-3 left-3">
+<span class="bg-blue-600 text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase">Oferta</span>
+</div>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<p class="text-[#b99d9d] text-xs uppercase font-bold tracking-widest mb-1">Xbox</p>
+<h3 class="text-white font-bold text-base mb-2 line-clamp-2">Xbox Wireless Controller - Robot White</h3>
+<div class="mt-auto pt-4 flex flex-col gap-4">
+<div class="flex items-end justify-between">
+<span class="text-2xl font-bold text-primary neon-text">$59.99</span>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-2.5 rounded-lg flex items-center justify-center gap-2 transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined text-xl">shopping_cart</span>
+                                Agregar al carrito
+                            </button>
+</div>
+</div>
+</div>
+<!-- Product Card 3 (Digital Code) -->
+<div class="group bg-card-dark border border-border-dark rounded-xl overflow-hidden hover:border-primary/50 transition-all duration-300 flex flex-col">
+<div class="relative aspect-square overflow-hidden bg-background-dark p-6">
+<div class="w-full h-full rounded-lg bg-gradient-to-br from-yellow-500 to-orange-700 flex items-center justify-center shadow-inner">
+<span class="material-symbols-outlined text-6xl text-white">confirmation_number</span>
+</div>
+<div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="text-white font-bold bg-primary px-4 py-2 rounded-lg">Entrega Instantánea</span>
+</div>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<p class="text-[#b99d9d] text-xs uppercase font-bold tracking-widest mb-1">Digital</p>
+<h3 class="text-white font-bold text-base mb-2 line-clamp-2">Tarjetas PlayStation Network $50 USD</h3>
+<div class="mt-auto pt-4 flex flex-col gap-4">
+<div class="flex items-end justify-between">
+<span class="text-2xl font-bold text-primary neon-text">$49.99</span>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-2.5 rounded-lg flex items-center justify-center gap-2 transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined text-xl">bolt</span>
+                                Comprar Ahora
+                            </button>
+</div>
+</div>
+</div>
+<!-- Product Card 4 (Repair Service) -->
+<div class="group bg-card-dark border border-border-dark rounded-xl overflow-hidden hover:border-primary/50 transition-all duration-300 flex flex-col">
+<div class="relative aspect-square overflow-hidden bg-background-dark">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Technical person repairing gaming console hardware" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2AgvM0IZZq7lpkIXwh0LvXMO-Q66LQWfYkhINRf1S4OgpqSJbxXheFbMhoiSAC7GVCpb2ElgcIYdbFA9couLm4lA9ALG6zzYL-n3jJ86vZLYXtbZwbDBtfdT2Ilc-mH_NgzLf8ERYj4QSUbdgpxyhdZl_45J0Gt1FE7EKJQ8P_L5l7FdN013WsU0_rqsAmiMzavW6rZQD9cCZGogh0orjibz_aYWfPVwdWQYZAbzbP4ODNnq2Q_fibEwghwDb2Swv5pOB_D717Sv7"/>
+<div class="absolute top-3 right-3">
+<span class="bg-green-600 text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase">Servicio</span>
+</div>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<p class="text-[#b99d9d] text-xs uppercase font-bold tracking-widest mb-1">Soporte Técnico</p>
+<h3 class="text-white font-bold text-base mb-2 line-clamp-2">Reparación de Joystick (Drift) - PS5/Switch</h3>
+<div class="mt-auto pt-4 flex flex-col gap-4">
+<div class="flex items-end justify-between">
+<span class="text-2xl font-bold text-primary neon-text">$25.00</span>
+</div>
+<button class="w-full bg-border-dark hover:bg-primary text-white font-bold py-2.5 rounded-lg flex items-center justify-center gap-2 transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined text-xl">handyman</span>
+                                Reservar Servicio
+                            </button>
+</div>
+</div>
+</div>
+<!-- Product Card 5 -->
+<div class="group bg-card-dark border border-border-dark rounded-xl overflow-hidden hover:border-primary/50 transition-all duration-300 flex flex-col">
+<div class="relative aspect-square overflow-hidden bg-background-dark">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Nintendo Switch OLED white version" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrJKerMQTGWKCu-vIPGJPhSfWEidcTt5wtF8ygMQZt3aBCck7r8Ar8q9hMB38Y6ctX0xYiCkm3gdKeqP5Wec8HnonnLDAlatS0ODCWH23HWknypZiQdTg8czgFQlabV0Hm84qLDrCWAhtSZwVEYkuJNzP-G3ssm6mCtZLsXY8-RzFIEG8K-0glCUn3I0vnFhvTkU8onHqADCrF2XgPqVFYejcp9IVR1nSZOFjJ-9HGX7lNeAvmMpqfR6RmcAtMzNmiipiS_2VKLQDy"/>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<p class="text-[#b99d9d] text-xs uppercase font-bold tracking-widest mb-1">Nintendo</p>
+<h3 class="text-white font-bold text-base mb-2 line-clamp-2">Nintendo Switch™ – Model OLED White</h3>
+<div class="mt-auto pt-4 flex flex-col gap-4">
+<div class="flex items-end justify-between">
+<span class="text-2xl font-bold text-primary neon-text">$349.99</span>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-2.5 rounded-lg flex items-center justify-center gap-2 transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined text-xl">shopping_cart</span>
+                                Agregar al carrito
+                            </button>
+</div>
+</div>
+</div>
+<!-- Product Card 6 -->
+<div class="group bg-card-dark border border-border-dark rounded-xl overflow-hidden hover:border-primary/50 transition-all duration-300 flex flex-col">
+<div class="relative aspect-square overflow-hidden bg-background-dark">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="PlayStation 5 console and controller set" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAelTP6uPdXuasfTakcnPlQ-pkkdvL8NkC1yGe9tKB9WnMu1ENCBIlac151rmnzs2p7z8anEzHnfCt_6e6SBHVOwiDUkAwknFswQj4nspLYHF6pLB9UHazhq2a2KgIH-703opWcvTRha46ZkfuNC9tGRZ8xzOhiPm_uTv9nc9av9g-NdNv7YyZHYLLgMLWT_arg8bJStAwybpJwCNpCGgXLmktgiayhU1m_j1DKG7XzKhD5H0dUnib_bYthzBe_bucHnNv20ptRC5Kl"/>
+<div class="absolute top-3 left-3">
+<span class="bg-primary text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase">Limitado</span>
+</div>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<p class="text-[#b99d9d] text-xs uppercase font-bold tracking-widest mb-1">Hardware</p>
+<h3 class="text-white font-bold text-base mb-2 line-clamp-2">Consola PlayStation®5 (Modelo Slim)</h3>
+<div class="mt-auto pt-4 flex flex-col gap-4">
+<div class="flex items-end justify-between">
+<span class="text-2xl font-bold text-primary neon-text">$499.00</span>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-2.5 rounded-lg flex items-center justify-center gap-2 transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined text-xl">shopping_cart</span>
+                                Agregar al carrito
+                            </button>
+</div>
+</div>
+</div>
+<!-- Product Card 7 -->
+<div class="group bg-card-dark border border-border-dark rounded-xl overflow-hidden hover:border-primary/50 transition-all duration-300 flex flex-col">
+<div class="relative aspect-square overflow-hidden bg-background-dark">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Gaming headset with RGB lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-NqLiYoBEsE8UeAFp16kpu7cfQfSClRIWq7atetVS99t5--Dy1__ol0YT42gxMvExn3Dj0qIFaF_OvckLNBjK4zVpz_JrhgFTXXOYE7-uJHRh3_ruKP675qwmeASqN4dR7MDf9df2GUS9nyeo-TVCMPCfhoDm_iCMjFEPv-J9paWz6yvscYJ7uNAV922sQ-025G5MN7qVKiEyBT1DoifpJECTv6-mmWooZk3z8XyC_ZGuko12VsK2GVqb43TpMghGhk70bMG29LeE"/>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<p class="text-[#b99d9d] text-xs uppercase font-bold tracking-widest mb-1">Accesorios</p>
+<h3 class="text-white font-bold text-base mb-2 line-clamp-2">Headset Gamer Astro A10 Gen 2 (RGB)</h3>
+<div class="mt-auto pt-4 flex flex-col gap-4">
+<div class="flex items-end justify-between">
+<span class="text-2xl font-bold text-primary neon-text">$54.00</span>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-2.5 rounded-lg flex items-center justify-center gap-2 transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined text-xl">shopping_cart</span>
+                                Agregar al carrito
+                            </button>
+</div>
+</div>
+</div>
+<!-- Product Card 8 -->
+<div class="group bg-card-dark border border-border-dark rounded-xl overflow-hidden hover:border-primary/50 transition-all duration-300 flex flex-col">
+<div class="relative aspect-square overflow-hidden bg-background-dark p-6">
+<div class="w-full h-full rounded-lg bg-gradient-to-br from-green-500 to-green-900 flex items-center justify-center">
+<span class="material-symbols-outlined text-6xl text-white">videogame_asset</span>
+</div>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<p class="text-[#b99d9d] text-xs uppercase font-bold tracking-widest mb-1">Suscripción</p>
+<h3 class="text-white font-bold text-base mb-2 line-clamp-2">Xbox Game Pass Ultimate - 12 Meses</h3>
+<div class="mt-auto pt-4 flex flex-col gap-4">
+<div class="flex items-end justify-between">
+<span class="text-2xl font-bold text-primary neon-text">$119.99</span>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-2.5 rounded-lg flex items-center justify-center gap-2 transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined text-xl">bolt</span>
+                                Comprar Ahora
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-12 flex justify-center items-center gap-2">
+<button class="w-10 h-10 rounded-lg bg-border-dark flex items-center justify-center text-white hover:bg-primary transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-white font-bold">1</button>
+<button class="w-10 h-10 rounded-lg bg-border-dark flex items-center justify-center text-white hover:bg-primary transition-colors">2</button>
+<button class="w-10 h-10 rounded-lg bg-border-dark flex items-center justify-center text-white hover:bg-primary transition-colors">3</button>
+<span class="text-border-dark px-2">...</span>
+<button class="w-10 h-10 rounded-lg bg-border-dark flex items-center justify-center text-white hover:bg-primary transition-colors">12</button>
+<button class="w-10 h-10 rounded-lg bg-border-dark flex items-center justify-center text-white hover:bg-primary transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Footer Mini -->
+<footer class="mt-12 border-t border-border-dark bg-background-dark py-8 px-6">
+<div class="max-w-[1440px] mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-2 opacity-50">
+<div class="size-6 text-white">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 4H42V17.3333V30.6667H24V44H6V30.6667V17.3333H24V4Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<span class="text-xs font-bold uppercase tracking-widest">Taller R-GAMERS © 2024</span>
+</div>
+<div class="flex gap-8">
+<a class="text-xs text-[#b99d9d] hover:text-white" href="#">Términos de Servicio</a>
+<a class="text-xs text-[#b99d9d] hover:text-white" href="#">Política de Privacidad</a>
+<a class="text-xs text-[#b99d9d] hover:text-white" href="#">Garantía de Reparación</a>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-[#b99d9d] hover:text-primary cursor-pointer">social_leaderboard</span>
+<span class="material-symbols-outlined text-[#b99d9d] hover:text-primary cursor-pointer">camera</span>
+<span class="material-symbols-outlined text-[#b99d9d] hover:text-primary cursor-pointer">video_library</span>
+</div>
+</div>
+</footer>
+</body></html>
