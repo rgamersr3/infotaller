@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Taller R-GAMERS | Reparación de Consolas y Tienda</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee2b2b",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#181111",
+                        "card-dark": "#271c1c",
+                        "border-dark": "#392828"
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .neon-glow {
+            box-shadow: 0 0 10px rgba(238, 43, 43, 0.4);
+        }
+        .neon-glow:hover {
+            box-shadow: 0 0 20px rgba(238, 43, 43, 0.7);
+            border-color: #ee2b2b;
+        }
+        .glass-nav {
+            backdrop-filter: blur(12px);
+            background-color: rgba(24, 17, 17, 0.85);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-white transition-colors duration-300">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 glass-nav border-b border-solid border-border-dark px-6 md:px-20 py-4">
+<div class="max-w-[1200px] mx-auto flex items-center justify-between">
+<div class="flex items-center gap-12">
+<div class="flex items-center gap-3 text-primary">
+<div class="size-8 flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl font-bold">sports_esports</span>
+</div>
+<h2 class="text-white text-xl font-bold leading-tight tracking-tight uppercase">Taller R-GAMERS</h2>
+</div>
+<nav class="hidden lg:flex items-center gap-8">
+<a class="text-white hover:text-primary text-sm font-medium transition-colors" href="#">Home</a>
+<a class="text-white/70 hover:text-primary text-sm font-medium transition-colors" href="#services">Services</a>
+<a class="text-white/70 hover:text-primary text-sm font-medium transition-colors" href="#shop">Shop</a>
+<a class="text-white/70 hover:text-primary text-sm font-medium transition-colors" href="#">Games</a>
+<a class="text-white/70 hover:text-primary text-sm font-medium transition-colors" href="#">Contact</a>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden sm:flex items-center">
+<label class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-[#b99d9d] text-xl">search</span>
+<input class="form-input w-48 lg:w-64 pl-10 pr-4 py-2 rounded-lg text-white border-none bg-border-dark focus:ring-1 focus:ring-primary text-sm placeholder:text-[#b99d9d]" placeholder="Buscar equipo..." value=""/>
+</label>
+</div>
+<button class="flex items-center justify-center rounded-lg h-10 px-6 bg-primary text-white text-sm font-bold transition-transform hover:scale-105 active:scale-95 shadow-lg shadow-primary/20">
+<span>Login</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-1">
+<!-- Hero Section -->
+<section class="relative w-full px-6 md:px-20 py-10">
+<div class="max-w-[1200px] mx-auto">
+<div class="@container">
+<div class="relative overflow-hidden rounded-xl border border-border-dark">
+<div class="flex min-h-[520px] flex-col gap-6 bg-cover bg-center bg-no-repeat items-start justify-center px-8 md:px-16" data-alt="Interior of a futuristic gaming repair shop with neon red lights" style='background-image: linear-gradient(90deg, rgba(24, 17, 17, 0.95) 0%, rgba(24, 17, 17, 0.4) 60%, rgba(24, 17, 17, 0.1) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDKGyRw-2aVHNEIzabv8nocwEot0tXNHdgTZ_ZpmfcsYw9kqP5QC3kMtJnGXh3NGH2hW-VXtrqC23vqV2JZwDg4qHvGAIhNZEj3HoQlVRAH38a9udL980KUNQRCZktofpmEKNOzWnyX5ZZC_hI6SzKgx4HSWoPEYzxm4Vlh4mqrMTtMQKuhTp3ryGMoekQ6rLRwjX-z5n3o7SCVYDhxHWFFkYHr_mCtA9mj3Oiq4KVIbK4IqxCdR5dibWGTZEifnQJjbU5QQyi9TziF");'>
+<div class="max-w-2xl space-y-4">
+<div class="inline-block px-3 py-1 rounded-full bg-primary/20 border border-primary/30 text-primary text-xs font-bold uppercase tracking-widest">
+                                        Servicio Técnico Pro
+                                    </div>
+<h1 class="text-white text-4xl md:text-6xl font-black leading-tight tracking-tight">
+                                        Reparamos tu consola, <br/>
+<span class="text-primary">potenciamos</span> tu experiencia.
+                                    </h1>
+<p class="text-[#b99d9d] text-lg max-w-lg">
+                                        Expertos en mantenimiento preventivo y correctivo para todas las plataformas. Devolvemos la vida a tu equipo con repuestos originales.
+                                    </p>
+</div>
+<div class="flex flex-wrap gap-4 mt-4">
+<button class="flex items-center gap-2 px-8 py-4 bg-primary text-white rounded-lg font-bold transition-all hover:bg-primary/90 hover:scale-105 shadow-xl shadow-primary/30">
+<span class="material-symbols-outlined">build</span>
+                                        Solicitar diagnóstico
+                                    </button>
+<button class="flex items-center gap-2 px-8 py-4 bg-border-dark text-white rounded-lg font-bold transition-all hover:bg-white/10 border border-white/5">
+<span class="material-symbols-outlined">shopping_cart</span>
+                                        Visitar tienda
+                                    </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="px-6 md:px-20 py-12 bg-background-dark" id="services">
+<div class="max-w-[1200px] mx-auto">
+<div class="flex items-end justify-between mb-8 px-4">
+<div class="space-y-1">
+<h2 class="text-white text-3xl font-bold tracking-tight">Nuestros Servicios Especializados</h2>
+<p class="text-[#b99d9d]">Mantenimiento de alto rendimiento para hardware gaming</p>
+</div>
+<div class="hidden md:block">
+<a class="text-primary font-bold flex items-center gap-1 hover:underline" href="#">
+                                Ver todos los servicios <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 p-4">
+<!-- Card 1 -->
+<div class="flex flex-col gap-4 rounded-xl border border-border-dark bg-card-dark p-6 transition-all duration-300 neon-glow group">
+<div class="w-12 h-12 flex items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">sports_esports</span>
+</div>
+<div class="space-y-2">
+<h3 class="text-white text-xl font-bold">PlayStation</h3>
+<p class="text-[#b99d9d] text-sm leading-relaxed">
+                                    Cambio de pasta térmica de alta conductividad, reparación de puerto HDMI 2.1 y limpieza de lector de discos.
+                                </p>
+<ul class="text-xs text-[#b99d9d] space-y-1 pt-2">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Drift de DualSense</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Reballing de APU</li>
+</ul>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="flex flex-col gap-4 rounded-xl border border-border-dark bg-card-dark p-6 transition-all duration-300 neon-glow group">
+<div class="w-12 h-12 flex items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">computer</span>
+</div>
+<div class="space-y-2">
+<h3 class="text-white text-xl font-bold">Xbox Series &amp; PC</h3>
+<p class="text-[#b99d9d] text-sm leading-relaxed">
+                                    Reparación de fuentes conmutadas, expansión de almacenamiento SSD NVMe y optimización de flujo de aire.
+                                </p>
+<ul class="text-xs text-[#b99d9d] space-y-1 pt-2">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Errores de Software</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> GPU Repair</li>
+</ul>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="flex flex-col gap-4 rounded-xl border border-border-dark bg-card-dark p-6 transition-all duration-300 neon-glow group">
+<div class="w-12 h-12 flex items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">videogame_asset</span>
+</div>
+<div class="space-y-2">
+<h3 class="text-white text-xl font-bold">Nintendo Switch</h3>
+<p class="text-[#b99d9d] text-sm leading-relaxed">
+                                    Sustitución de sticks Joy-Con (Originales), cambio de pantallas táctiles y reparación del puerto de carga USB-C.
+                                </p>
+<ul class="text-xs text-[#b99d9d] space-y-1 pt-2">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Batería de larga duración</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Lectores de cartuchos</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Store Teaser Section -->
+<section class="px-6 md:px-20 py-16" id="shop">
+<div class="max-w-[1200px] mx-auto">
+<div class="flex flex-col md:flex-row items-center justify-between mb-10 gap-4">
+<div class="text-center md:text-left">
+<h2 class="text-white text-3xl font-bold tracking-tight">Lo último en la Tienda</h2>
+<p class="text-[#b99d9d]">Periféricos y hardware seleccionado para gamers entusiastas.</p>
+</div>
+<button class="bg-primary/10 text-primary border border-primary/20 px-6 py-2 rounded-full font-bold hover:bg-primary hover:text-white transition-all">
+                            Ver catálogo completo
+                        </button>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Product 1 -->
+<div class="bg-card-dark border border-border-dark rounded-xl overflow-hidden group">
+<div class="aspect-square relative overflow-hidden bg-[#1f1616]">
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-full h-full flex items-center justify-center p-8" data-alt="Mechanical gaming keyboard with RGB lighting">
+<span class="material-symbols-outlined text-6xl text-white/20 group-hover:text-primary transition-colors">keyboard</span>
+</div>
+<div class="absolute top-3 left-3 bg-primary text-[10px] font-bold px-2 py-1 rounded">HOT</div>
+</div>
+<div class="p-4 space-y-2">
+<h4 class="font-bold text-sm">Mechanical Keyboard RGB</h4>
+<div class="flex items-center justify-between">
+<span class="text-primary font-bold">$129.00</span>
+<button class="p-2 rounded-lg bg-border-dark hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-sm">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="bg-card-dark border border-border-dark rounded-xl overflow-hidden group">
+<div class="aspect-square relative overflow-hidden bg-[#1f1616]">
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-full h-full flex items-center justify-center p-8" data-alt="Professional gaming mouse with red accents">
+<span class="material-symbols-outlined text-6xl text-white/20 group-hover:text-primary transition-colors">mouse</span>
+</div>
+</div>
+<div class="p-4 space-y-2">
+<h4 class="font-bold text-sm">Pro Gamer Mouse 16k DPI</h4>
+<div class="flex items-center justify-between">
+<span class="text-primary font-bold">$79.00</span>
+<button class="p-2 rounded-lg bg-border-dark hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-sm">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="bg-card-dark border border-border-dark rounded-xl overflow-hidden group">
+<div class="aspect-square relative overflow-hidden bg-[#1f1616]">
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-full h-full flex items-center justify-center p-8" data-alt="Premium wireless headset for gaming">
+<span class="material-symbols-outlined text-6xl text-white/20 group-hover:text-primary transition-colors">headset</span>
+</div>
+</div>
+<div class="p-4 space-y-2">
+<h4 class="font-bold text-sm">Wireless Surround Headset</h4>
+<div class="flex items-center justify-between">
+<span class="text-primary font-bold">$199.00</span>
+<button class="p-2 rounded-lg bg-border-dark hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-sm">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product 4 -->
+<div class="bg-card-dark border border-border-dark rounded-xl overflow-hidden group">
+<div class="aspect-square relative overflow-hidden bg-[#1f1616]">
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-full h-full flex items-center justify-center p-8" data-alt="Modern gaming controller for PC and console">
+<span class="material-symbols-outlined text-6xl text-white/20 group-hover:text-primary transition-colors">videogame_asset</span>
+</div>
+<div class="absolute top-3 left-3 bg-[#392828] text-[10px] font-bold px-2 py-1 rounded">PRE-ORDER</div>
+</div>
+<div class="p-4 space-y-2">
+<h4 class="font-bold text-sm">Elite Edition Controller</h4>
+<div class="flex items-center justify-between">
+<span class="text-primary font-bold">$89.00</span>
+<button class="p-2 rounded-lg bg-border-dark hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-sm">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#110a0a] border-t border-border-dark px-6 md:px-20 py-12">
+<div class="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="col-span-1 md:col-span-2 space-y-6">
+<div class="flex items-center gap-3 text-primary">
+<span class="material-symbols-outlined text-3xl font-bold">sports_esports</span>
+<h2 class="text-white text-xl font-bold uppercase tracking-tight">Taller R-GAMERS</h2>
+</div>
+<p class="text-[#b99d9d] max-w-sm leading-relaxed">
+                        Somos el taller líder en reparación de consolas. Calidad, rapidez y garantía en cada servicio. No dejes que el lag detenga tu diversión.
+                    </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-border-dark flex items-center justify-center hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined">social_leaderboard</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-border-dark flex items-center justify-center hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined">public</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-border-dark flex items-center justify-center hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined">alternate_email</span>
+</a>
+</div>
+</div>
+<div class="space-y-4">
+<h4 class="text-white font-bold uppercase text-xs tracking-[0.2em]">Soporte</h4>
+<ul class="space-y-2 text-sm text-[#b99d9d]">
+<li><a class="hover:text-primary transition-colors" href="#">Estado de Reparación</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Garantías</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">FAQs</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Envíos</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="text-white font-bold uppercase text-xs tracking-[0.2em]">Ubicación</h4>
+<p class="text-sm text-[#b99d9d]">Av. Central 456, Gaming District</p>
+<p class="text-sm text-[#b99d9d]">Lunes - Sábado: 10am - 8pm</p>
+<div class="rounded-lg overflow-hidden h-24 w-full bg-border-dark mt-2" data-location="Mexico City" style="https://lh3.googleusercontent.com/aida-public/AB6AXuCX4Kfb1Wp3-JGGmyMD_P3ixKg5CtJtErBsiPz6gfKer7iD4ypo_wRsuRZgV5F0FYEwyL5cv8p4p82VoEtpjZtQRXP_Xm2Mo1Di-jRs9C3-_4mS-UUxT-cIUrjXWjtD7481UqwgOLRwvKOHKBDBK0ulm_JdhEgnzwAbxYE0DEwjO6wtsv567wCfacezI6BlPkCsdPQVctoGsc25fx5W58P6cUBx1db0JKHTx1FFUzZDMnhtx81Ce5snEOcGw_J0lbUVdScveHxwRW0S">
+<div class="w-full h-full bg-cover bg-center opacity-50" data-alt="Map location of the shop" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD9tcmmfbddlnKX-oulNubVPkl65xAKjOM2Bifv5WbMP1_zj1YX_zDibUy55E9VOu05j0efh6Py8Rn47C_GTzHudhPZU7IAE2xfZVBEnNqIuiq8PUbtaaYgm9NBUOyx71u1BbP_qKqOInNfjQGtsNI353RIyAd3ctgfFOeHP6T8hV3D0jRVtUVzzOjBr98DW5-AAY0n3jMYFpxwpALV5ZIVGOGWFFdBAIESe3p5_maaq54q5mRkcR9Fn00fh25vaLoO7715VpO_U2eG');"></div>
+</div>
+</div>
+</div>
+<div class="max-w-[1200px] mx-auto mt-12 pt-8 border-t border-border-dark flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-[#543b3b]">
+<p>© 2024 Taller R-GAMERS. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="hover:text-white transition-colors" href="#">Términos y condiciones</a>
+<a class="hover:text-white transition-colors" href="#">Privacidad</a>
+</div>
+</div>
+</footer>
+<!-- Floating Action Button for Support -->
+<div class="fixed bottom-8 right-8 z-[100]">
+<button class="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white shadow-2xl shadow-primary/40 transition-transform hover:scale-110 active:scale-95">
+<span class="material-symbols-outlined text-3xl">chat</span>
+</button>
+</div>
+</div>
+</body></html>
